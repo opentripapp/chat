@@ -1,9 +1,7 @@
 
 module.exports = {
   mode:'spa',
-  router: {
-    base: '/chat/'
-  },
+
   css:[
     {src:'element-ui/lib/theme-default/index.css',lang:'css'}
   ],
