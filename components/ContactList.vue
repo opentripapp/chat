@@ -94,7 +94,7 @@
       this.$store.commit('SET_WELCOME',true)
       let datas = []
       this.$store.commit('SET_CHAT',datas)
-      this.loadChatList();
+      //this.loadChatList();
     }
   }
 </script>

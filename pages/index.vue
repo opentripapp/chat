@@ -50,7 +50,6 @@ export default {
             if(this.current_chat._id === chat._id){
                  this.$store.commit('JUST_UPDATE',chat);
             }else{
-                console.log('add',chat)
               this.$store.commit('PLUS_UNREAD',chat.unread_count);
               this.$store.commit('ADD_OR_UPDATE_CHAT',chat);
             }
@@ -58,6 +57,7 @@ export default {
          this.$store.commit('SET_USER',data.user);
       });
       this.$socket.on('error', (data)=>{
+          console.log(data)
 /*
           this.$store.commit('SET_AUTH',false);
           this.$store.dispatch('logOut');
@@ -76,7 +76,7 @@ export default {
 
     }
   },
-  created(){
+  mounted(){
       try{
           this.init()
       }catch(err){

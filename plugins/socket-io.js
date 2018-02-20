@@ -9,7 +9,14 @@ import Vue from 'vue'
 const SocketIoPlugin = {
   install:(Vue)=>{
     Vue.prototype.$initSocket =function () {
-      Vue.prototype.$socket = io(`${SOCKET_CHAT}?auth_token=${Cookies.get('token')}`);
+      Vue.prototype.$socket = io(
+        `${SOCKET_CHAT}`,
+         {
+           query:`auth_token=${Cookies.get('token')}`,
+           transports: ['websocket'],
+           path:'/v2/chat'
+         }
+        );
     }
   }
 }
