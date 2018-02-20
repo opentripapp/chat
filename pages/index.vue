@@ -57,11 +57,9 @@ export default {
          this.$store.commit('SET_USER',data.user);
       });
       this.$socket.on('error', (data)=>{
-          console.log(data)
-/*
           this.$store.commit('SET_AUTH',false);
           this.$store.dispatch('logOut');
-          window.location.reload()*/
+          window.location.reload()
       });
 
 
