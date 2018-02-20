@@ -3,7 +3,7 @@
  */
 import axios from 'axios'
 import * as Cookies from 'js-cookie'
-import {BASE_URL,HEADERS,QISCUS_BASE_URL,QISCUS_SECRET,SOCKET_CHAT} from './config.env'
+import {BASE_URL,HEADERS} from './config.env'
 
 export const state = () =>({
   user:{
@@ -136,28 +136,6 @@ export const actions = {
     }catch (error){
       throw error
     }
-  },
-  async loadContactMessage({commit},{user_email,page}){
-      try{
-        const {data} = await axios.get(BASE_URL + "chat/get_user_rooms",{
-          params:{
-            email:user_email,
-          },
-          headers:HEADERS.headers
-        })
-
-        if(data.error){
-          throw {message:data.message}
-        }
-        if(!data.error){
-          commit('PUSH_CHAT',data.data.results.rooms_info)
-        }else{
-          throw {message:"Terjadi kesalahan tidak diketahui"}
-        }
-
-      }catch (error){
-        throw error
-      }
   },
   logOut({commit}){
     commit('SET_AUTH',false)
