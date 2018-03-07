@@ -195,6 +195,16 @@ socket.off('event_name');
 
 ## List of Method
 
+### `create_private_chat` create private chat with user target (1 target)
+
+```javascript
+let otherUserId = `meowmeowmeowmeow`
+socket.emit('create_private_chat',otherUserId,(result)=>{
+  //data result
+  //ChatObject
+});
+```
+
 ### `get_list_chat` getting list of chat
 
 ```javascript
