@@ -7,7 +7,6 @@ module.exports = {
   HEADERS : {
     headers:{'x-api-key':'opd:YXZboFArLjxHFXc:OD128QmHWlNKHkeSSqHtDcGCg'}
   },
-  SOCKET_CHAT : 'http://localhost:8081/'
-  //SOCKET_CHAT : 'https://socket.opentripapp.com/'
-
+  //SOCKET_CHAT : 'http://localhost:8081/'
+  SOCKET_CHAT : 'https://socket2.opentripapp.com/'
 };
